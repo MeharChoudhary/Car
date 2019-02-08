@@ -17,6 +17,24 @@ namespace Tests.UnitTests.Web.Controllers
 {
     public class HomeControllerTests
     {
+        
+       [Fact]
+        public void AlfaRomeo_ReturnsAString()
+        {
+            // Arrange
+            var controller = new CarController();
+
+            // Act
+            var result = controller.AlfaRomeo();
+
+            // Assert
+	
+            var contentResult = Assert.IsAssignableFrom<ContentResult>(result);
+            var actual = contentResult.Content;
+            var expected = "Alfa Romeo is another sport brand. Returned in text.";
+			      Assert.Equal(expected, actual.ToString());
+        }
+       
 
     [Fact]
         public void InitialsTest()
